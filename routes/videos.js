@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
     res.json(videoDetail)
 })
 
-//TODO POST /videos that will add a new video with unique id
+// POST /videos that will add a new video with unique id
 router.post('/', (req, res) => {
     const {title, description, image} = req.body;
     const newVideo = {
@@ -59,7 +59,8 @@ router.post('/', (req, res) => {
         id: uniqid()
     }
     videosArray.push(newVideo);
-    res.json(videosArray)
+    const updatedVideosFile = fs.writeFileSync('./data/videos.json', JSON.stringify(videosArray));
+    res.json(updatedVideosFile)
 })
 
 //TODO POST new comments for a specific video

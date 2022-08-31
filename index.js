@@ -9,8 +9,10 @@ const {PORT} = process.env;
 //CORS middleware
 app.use(cors());
 
+// Middleware to give us access to req.body 
 app.use(express.json());
 
+// Middleware to serve up static files
 app.use("/public/thumbnail",express.static('./public/images/Upload-video-preview.jpg'))
 
 app.get('/', (_req, res) => {
