@@ -25,11 +25,12 @@ router.get('/:id', (req, res) => {
 
 //TODO POST /videos that will add a new video with unique id
 router.post('/', (req, res) => {
-    const {title, description} = req.body;
+    const {title, description, image} = req.body;
     const newVideo = {
         title,
+        channel: "me",
+        image,
         description,
-        image: "https://i.imgur.com/l2Xfgpl.jpg",
         views: Math.floor(Math.random() * 101),
         likes: Math.floor(Math.random() * 101),
         duration: "4:01",

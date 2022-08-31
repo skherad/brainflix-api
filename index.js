@@ -11,6 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/public/thumbnail",express.static('./public/images/Upload-video-preview.jpg'))
+
 app.get('/', (_req, res) => {
     res.send("request received")
 })
