@@ -31,8 +31,8 @@ router.post('/', (req, res) => {
         channel: "me",
         image,
         description,
-        views: Math.floor(Math.random() * 101),
-        likes: Math.floor(Math.random() * 101),
+        views: Math.floor(Math.random() * 1000001).toLocaleString(),
+        likes: Math.floor(Math.random() * 1000001).toLocaleString(),
         duration: "4:01",
         video: "https://project-2-api.herokuapp.com/stream",
         timestamp: Date.now(),
@@ -62,8 +62,5 @@ router.post('/', (req, res) => {
     const updatedVideosFile = fs.writeFileSync('./data/videos.json', JSON.stringify(videosArray));
     res.json(updatedVideosFile)
 })
-
-//TODO POST new comments for a specific video
-
 
 module.exports = router

@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Middleware to serve up static files
-app.use("/public/thumbnail",express.static('./public/images/Upload-video-preview.jpg'))
+app.use("/public", express.static('./public/images'))
 
 app.get('/', (_req, res) => {
     res.send("request received")
